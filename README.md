@@ -2,9 +2,9 @@
 
 Creating geodesic icosahedron with given subdivision frequency. 
 
-<img src="/Figure.png" width="500">
+<img src="/Figure.png" width="700">
 
-This is different than a more common approach which recursively applies Loop-like subdivision.
+This is different than a more common approach which recursively applies a Loop-like subdivision.
 
 
 
