@@ -1,6 +1,15 @@
 # icosphere
 
-Creating geodesic icosahedron with given subdivision frequency. This is different than a more common approach which recursively applies Loop-like subdivision.
+Creating geodesic icosahedron with given subdivision frequency. 
+
+<img src="/Figure.png" width="500">
+
+This is different than a more common approach which recursively applies Loop-like subdivision.
+
+
+
+
+
 
 Advantage of being able to choose integer subdivision frequency, compared to the recursive subdivision, is in controlling the mesh resolution. Mesh resolution grows quadratically with subdivision frequencies while it grows exponentially with iterations of the recursive subdivision. To be precise, using the recursive subdivision (each iteration being a subdivision with frequency 2), the possible number of vertices grows with iterations <img src="https://render.githubusercontent.com/render/math?math=i"> as 
 
