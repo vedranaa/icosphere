@@ -1,4 +1,4 @@
-# icosphere
+# icosphere.py
 
 Creating geodesic icosahedron with given subdivision frequency. 
 
