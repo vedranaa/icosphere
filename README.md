@@ -4,7 +4,7 @@ Creating geodesic icosahedron with given subdivision frequency.
 
 <img src="/Figure.png" width="700">
 
-This is different than a more common approach which recursively applies a Loop-like subdivision. Recursive subdivision is used in (https://github.com/facebookresearch/pytorch3d/blob/master/pytorch3d/utils/ico_sphere.py)[pytorch3d] 
+This is different than a more common approach which recursively applies a Loop-like subdivision. Recursive subdivision is used in [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/master/pytorch3d/utils/ico_sphere.py) 
 
 
 
