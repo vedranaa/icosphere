@@ -8,7 +8,7 @@ Advantage of being able to choose integer subdivision frequency, compared to the
 
 which gives a sequence
 
-    12, 42, 162, 642, 2562, 10242, 40962, 163842, 655362, 2621442... 
+    12, 42, 162, 642, 2562, 10242, 40962, 163842, 655362, 2621442, 10485762... 
 
 Notice for example there is no mesh having between 2562 and 10242 vertices. Using subdivision frequency, possible number of vertices grows with <img src="https://render.githubusercontent.com/render/math?math=\nu"> as
 
