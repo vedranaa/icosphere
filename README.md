@@ -26,4 +26,4 @@ which gives a sequence
 
 with 15 meshes having between 2562 and 10242 vertices. The advantage is even more pronounced when using higher resolutions.
 
-The code was originally developed (in matlab) for [this work](https://ieeexplore.ieee.org/document/7182720).
+The code was originally developed for [this work](https://ieeexplore.ieee.org/document/7182720).
