@@ -4,7 +4,7 @@ Creating geodesic icosahedron with given subdivision frequency. For a certain su
 
 <img src="/Figure.png" width="700">
 
-This is different than a more common approach which recursively applies a subdivision with <img src="https://render.githubusercontent.com/render/math?math=\nu=2">, for example as used in [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/master/pytorch3d/utils/ico_sphere.py) and [pymeshlab](https://pymeshlab.readthedocs.io/en/latest/filter_list.html#sphere).
+This is different than a more common approach which recursively applies a subdivision with <img src="https://render.githubusercontent.com/render/math?math=\nu=2">, for example as used in [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/master/pytorch3d/utils/ico_sphere.py) [pymeshlab](https://pymeshlab.readthedocs.io/en/latest/filter_list.html#sphere), and a number of other modules available at github.
 
 Advantage of being able to choose integer subdivision frequency, compared to the recursive subdivision, is in controlling the mesh resolution. Mesh resolution grows quadratically with subdivision frequencies while it grows exponentially with iterations of the recursive subdivision. To be precise, using the recursive subdivision, the possible number of vertices grows with iterations <img src="https://render.githubusercontent.com/render/math?math=i"> as 
 
