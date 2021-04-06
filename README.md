@@ -20,4 +20,4 @@ which gives a sequence
      2252, 2562, 2892, 3242, 3612, 4002, 4412, 4842, 5292, 5762, 6252, 6762, 
      7292, 7842, 8412, 9002, 9612, 10242...
 
-where <img src="https://render.githubusercontent.com/render/math?math=\nu=32"> gives 10242 vertices, and there are 15 meshes having between 2562 and 10242 vertices. The advantage is even more pronounced when using higher resolutions.
+with 15 meshes having between 2562 and 10242 vertices. The advantage is even more pronounced when using higher resolutions.
