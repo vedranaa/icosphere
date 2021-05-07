@@ -8,7 +8,7 @@ This is different than a more common approach which recursively applies a subdiv
 
 The advantage of using subdivision frequency, compared to the recursive subdivision, is in controlling the mesh resolution. Mesh resolution grows quadratically with subdivision frequencies while it grows exponentially with iterations of the recursive subdivision. To be precise, using the recursive subdivision, the number of vertices in resulting icosphere grows with iterations <img src="https://render.githubusercontent.com/render/math?math=i"> as 
 
- <img src="https://render.githubusercontent.com/render/math?math=V(i)= 12 %2B 10\,(2^i %2B 1)\,(2^i - 1)">
+ <img src="https://render.githubusercontent.com/render/math?math=V(i)= 12 %2B 10\,(4^i - 1)">
 
 which gives a sequence
 
