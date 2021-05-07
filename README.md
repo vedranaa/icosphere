@@ -8,7 +8,7 @@ This is different than a more common approach which recursively applies a subdiv
 
 The advantage of using the subdivision frequency, compared to the recursive subdivision, is in controlling the mesh resolution. Mesh resolution grows quadratically with subdivision frequencies while it grows exponentially with iterations of the recursive subdivision. To be precise, using the recursive subdivision, the number of vertices and faces in the resulting icosphere grows with iterations <img src="https://render.githubusercontent.com/render/math?math=i"> as 
 
- <img src="https://render.githubusercontent.com/render/math?math=V(i)= 12 %2B 10\,(4^i - 1), \, \, \, F(i)=20 \cdot 4^i">
+ <img src="https://render.githubusercontent.com/render/math?\begin{array}{c} math=V(i)= 12 %2B 10\,(4^i - 1)\\F(i)=20 \cdot 4^i\end{array}">
 
 which gives a sequence of mesh vertices
 
@@ -18,12 +18,12 @@ Notice for example there is no mesh having between 2562 and 10242 vertices. Usin
 
  <img src="https://render.githubusercontent.com/render/math?math=V(\nu)=12 %2B 10\,(\nu^2 - 1), \, \, \, F(\nu)=20 \cdot \nu^2">
 
-which gives a sequence of mesh verticees 
+which gives a sequence of mesh vertices 
     
      12, 42, 92, 162, 252, 362, 492, 642, 812, 1002, 1212, 1442, 1692, 1962, 
      2252, 2562, 2892, 3242, 3612, 4002, 4412, 4842, 5292, 5762, 6252, 6762, 
      7292, 7842, 8412, 9002, 9612, 10242...
 
-with 15 meshes having between 2562 and 10242 vertices. The advantage is even more pronounced when using higher resolutions.
+Now there is 15 meshes having between 2562 and 10242 vertices. The advantage is even more pronounced when using higher resolutions.
 
 The code was originally developed for [this work](https://ieeexplore.ieee.org/document/7182720).
