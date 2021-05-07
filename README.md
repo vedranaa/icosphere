@@ -27,9 +27,9 @@ which gives a sequence
 with 15 meshes having between 2562 and 10242 vertices. The advantage is even more pronounced when using higher resolutions.
 
 For number of faces we have
-<img src="https://render.githubusercontent.com/render/math?math=F(i)=20 4^i">
+<img src="https://render.githubusercontent.com/render/math?math=F(i)=20 \cdot 4^i">
 using recursive subdivision, and
-<img src="https://render.githubusercontent.com/render/math?math=F(\nu)=20 \nu^2">
+<img src="https://render.githubusercontent.com/render/math?math=F(\nu)=20 \cdot \nu^2">
 using subdivision frequency.
 
 The code was originally developed for [this work](https://ieeexplore.ieee.org/document/7182720).
