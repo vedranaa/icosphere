@@ -274,7 +274,7 @@ if __name__ == "__main__":
         # computing face shading intensity based on face normals  
         face_normals = np.cross(vertices[faces[:,1]]-vertices[faces[:,0]], 
                                 vertices[faces[:,2]]-vertices[faces[:,0]])
-        face_normals /= np.sqrt(np.sum(face_normals**2, axis=0, keepdims=True))               
+        face_normals /= np.sqrt(np.sum(face_normals**2, axis=1, keepdims=True))               
         light_source = matplotlib.colors.LightSource(azdeg=60, altdeg=30)
         intensity = light_source.shade_normals(face_normals)
     
