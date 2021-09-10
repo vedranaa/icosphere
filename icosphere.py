@@ -62,7 +62,7 @@ def icosphere(nu = 1, nr_verts = None):
         
     # Subdividing  
     if nu>1:
-        (vertices,faces) = subdivide_mesh(vertices, faces, nu);
+        (vertices,faces) = subdivide_mesh(vertices, faces, nu)
         vertices = vertices/np.sqrt(np.sum(vertices**2, axis=1, keepdims=True))
 
     return(vertices, faces)
@@ -159,7 +159,7 @@ def subdivide_mesh(vertices, faces, nu):
         VEF = np.r_[faces[f], AB, AC, BC, T]
         subfaces[f*nu**2:(f+1)*nu**2, :] = VEF[reordered_template]
         # Now geometry, computing positions of face vertices.
-        subvertices[T,:] = inside_points(subvertices[AB,:],subvertices[AC,:]);
+        subvertices[T,:] = inside_points(subvertices[AB,:],subvertices[AC,:])
     
     return (subvertices, subfaces)
 
