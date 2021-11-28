@@ -22,10 +22,7 @@ For a certain subdivision frequency `nu`, each edge of the icosahedron will be s
 This is different than a more common approach which recursively applies a subdivision with `nu = 2`, for example as used in pytorch3d [ico_sphere](https://github.com/facebookresearch/pytorch3d/blob/master/pytorch3d/utils/ico_sphere.py), pymeshlab [sphere](https://pymeshlab.readthedocs.io/en/latest/filter_list.html#sphere), trimesh [icosphere](https://trimsh.org/trimesh.creation.html?highlight=icosahedron#trimesh.creation.icosphere), and PyMesh [generate_icosphere](https://github.com/PyMesh/PyMesh/blob/384ba882b7558ba6e8653ed263c419226c22bddf/python/pymesh/meshutils/generate_icosphere.py).
 
 The advantage of using the subdivision frequency, compared to the recursive subdivision, is in controlling the mesh resolution. Mesh resolution grows quadratically with subdivision frequencies while it grows exponentially with iterations of the recursive subdivision. To be precise, using the recursive subdivision, the number of vertices and faces in the resulting icosphere grows with iterations `iter` as 
-```
-nr_vertex(iter) = 12 + 10 * (4**iter -1)
-nr_faces(iter) = 10 * 4**iter
-```
+`nr_vertex = 12 + 10 * (4**iter -1)` and `nr_faces = 10 * 4**iter`
 
 which gives a sequence of mesh vertices
 
