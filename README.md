@@ -1,6 +1,6 @@
-# icosphere.py
+# Geodesic icosahedron 
 
-Creating geodesic icosahedron given subdivision frequency. For a certain subdivision frequency <img src="https://render.githubusercontent.com/render/math?math=\nu"> (nu), each edge of the icosahedron will be split into <img src="https://render.githubusercontent.com/render/math?math=\nu"> segments, and each face will be split into <img src="https://render.githubusercontent.com/render/math?math=\nu^2"> faces.
+A python module for creating geodesic icosahedron given subdivision frequency. For a certain subdivision frequency <img src="https://render.githubusercontent.com/render/math?math=\nu"> (nu), each edge of the icosahedron will be split into <img src="https://render.githubusercontent.com/render/math?math=\nu"> segments, and each face will be split into <img src="https://render.githubusercontent.com/render/math?math=\nu^2"> faces.
 
 <img src="/Figure.png" width="700">
 
