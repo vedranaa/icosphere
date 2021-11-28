@@ -16,7 +16,7 @@ Check the examples in [icosphere github](https://github.com/vedranaa/icosphere):
 ## Why use subdivision frequency?
 For a certain subdivision frequency <img src="https://render.githubusercontent.com/render/math?math=\nu"> (nu), each edge of the icosahedron will be split into <img src="https://render.githubusercontent.com/render/math?math=\nu"> segments, and each face will be split into <img src="https://render.githubusercontent.com/render/math?math=\nu^2"> faces.
 
-<img src="/Figure.png" width="700">
+![](https://github.com/vedranaa/icosphere/raw/main/Figure.png)
 
 This is different than a more common approach which recursively applies a subdivision with <img src="https://render.githubusercontent.com/render/math?math=\nu=2">, for example as used in pytorch3d [ico_sphere](https://github.com/facebookresearch/pytorch3d/blob/master/pytorch3d/utils/ico_sphere.py), pymeshlab [sphere](https://pymeshlab.readthedocs.io/en/latest/filter_list.html#sphere), trimesh [icosphere](https://trimsh.org/trimesh.creation.html?highlight=icosahedron#trimesh.creation.icosphere), and PyMesh [generate_icosphere](https://github.com/PyMesh/PyMesh/blob/384ba882b7558ba6e8653ed263c419226c22bddf/python/pymesh/meshutils/generate_icosphere.py).
 
