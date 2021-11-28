@@ -23,15 +23,13 @@ This is different than a more common approach which recursively applies a subdiv
 
 The advantage of using the subdivision frequency, compared to the recursive subdivision, is in controlling the mesh resolution. Mesh resolution grows quadratically with subdivision frequencies while it grows exponentially with iterations of the recursive subdivision. To be precise, using the recursive subdivision, the number of vertices and faces in the resulting icosphere grows with iterations `iter` as 
 `nr_vertex = 12 + 10 * (4**iter -1)` and `nr_faces = 10 * 4**iter`
-
 which gives a sequence of mesh vertices
 
     12, 42, 162, 642, 2562, 10242, 40962, 163842, 655362, 2621442, 10485762... 
 
-Notice for example there is no mesh having between 2562 and 10242 vertices. Using subdivision frequency, the number of vertices and faces grows with <img src="https://render.githubusercontent.com/render/math?math=\nu"> as
-
- <img src="https://render.githubusercontent.com/render/math?math=V(\nu)=12 %2B 10\,(\nu^2 - 1), \, \, \, \, \, \, F(\nu)=20 \cdot \nu^2">
-
+Notice for example there is no mesh having between 2562 and 10242 vertices. Using subdivision frequency, the number of vertices and faces grows with `nu` as
+Notice for example there is no mesh having between 2562 and 10242 vertices. Using subdivision frequency, the number of vertices and faces grows with `nu` as
+ `nr_vertex = 12 + 10 * (nu**2 -1)` and `nr_faces = 20 * nu**2`
 which gives a sequence of mesh vertices 
     
      12, 42, 92, 162, 252, 362, 492, 642, 812, 1002, 1212, 1442, 1692, 1962, 
