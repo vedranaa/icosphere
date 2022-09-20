@@ -9,9 +9,9 @@ nu = 5  # or any other integer
 vertices, faces = icosphere(nu)
 ```
 ## Examples
-Check the examples in [icosphere github](https://github.com/vedranaa/icosphere), python script uses matplotlib for visualization, and one of jupyter notebooks uses plotly. You can also open the notebooks in colab.
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vedranaa/icosphere/blob/main/Example_in_plotly.ipynb) - with ploty
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vedranaa/icosphere/blob/main/Example_in_matplotlib.ipynb) - with matplotlib
+Check the examples in [icosphere github](https://github.com/vedranaa/icosphere), python script uses matplotlib for visualization, and one of jupyter notebooks uses plotly. You can also open the notebooks in colab:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vedranaa/icosphere/blob/main/Example_in_plotly.ipynb) - with ploty,
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vedranaa/icosphere/blob/main/Example_in_matplotlib.ipynb) - with matplotlib.
 
 ## Why use subdivision frequency?
 For a certain subdivision frequency `nu`, each edge of the icosahedron will be split into `nu` segments, and each face will be split into `nu**2` faces.
