@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "icosphere"
+dynamic = ["version"]
+description = "Constructs geodesic icosahedron given subdivision frequency."
+readme = "README.md"
+license = "lgpl-2.1"
+authors = [
+    { name = "Vedrana Andersen Dahl", email = "vand@dtu.dk" },
+]
+
+dependencies = [
+    "numpy",
+]
+
+[project.urls]
+Homepage = "https://github.com/vedranaa/icosphere"
+
+[tool.hatch.version]
+path = "icosphere.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "icosphere.py",
+]
