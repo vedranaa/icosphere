@@ -52,7 +52,9 @@ for nu in range(1,7):
     ax.set_zticks([-1,0,1])
     
     ax.set_title(f'nu={nu}')
+
 fig.suptitle('Icospheres with different subdivision frequency')
+plt.show()
    
 
 
