@@ -28,6 +28,8 @@ https://ieeexplore.ieee.org/document/7182720
 
 '''
 
+__version__ = "0.1.3"
+
 import numpy as np
 
 
