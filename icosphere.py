@@ -240,7 +240,8 @@ def inside_points(vAB, vAC):
     """
 
     out = []
-    for i in range(1, vAB.shape[0]):
+    u = vAB.shape[0]
+    for i in range(0 if u == 1 else 1, u):
         # Linearly interpolate between vABi and vACi in `i + 1` (`j`) steps,
         # not including the endpoints.
         # This could be written as
