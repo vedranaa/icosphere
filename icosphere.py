@@ -226,8 +226,8 @@ def vertex_ordering(nu):
     return(np.array(o))
 
 
-def inside_points(vAB,vAC):
-    '''  
+def inside_points(vAB, vAC):
+    """
     Returns coordinates of the inside                 .
     (on-face) vertices (marked by star)              / \
     for subdivision of the face ABC when         vAB0---vAC0
@@ -236,13 +236,25 @@ def inside_points(vAB,vAC):
                                                  / \ / \ / \
                                              vAB2---*---*---vAC2
                                                / \ / \ / \ / \
-                                              .---.---.---.---. 
-    '''
-   
-    v = []
-    for i in range(1,vAB.shape[0]):
-        w = np.arange(1,i+1)/(i+1)
-        for k in range(i):
-            v.append(w[-1-k]*vAB[i,:] + w[k]*vAC[i,:])
-    
-    return(np.array(v).reshape(-1,3)) # reshape needed for empty return
+                                              .---.---.---.---.
+    """
+
+    out = []
+    u = vAB.shape[0]
+    for i in range(0 if u == 1 else 1, u):
+        # Linearly interpolate between vABi and vACi in `i + 1` (`j`) steps,
+        # not including the endpoints.
+        # This could be written as
+        #   vABi = vAB[i, :]
+        #   vACi = vAC[i, :]
+        #   interp_multipliers = np.arange(1, j) / j
+        #   res = np.outer(interp_multipliers, vACi) + np.outer(1 - interp_multipliers, vABi)
+        # but that will involve some extra work on `np.outer`'s part that we can
+        # do ourselves since we know the shapes we're working with.
+        j = i + 1
+        interp_multipliers = (np.arange(1, j) / j)[:, None]
+        out.append(
+            np.multiply(interp_multipliers, vAC[i, None]) +
+            np.multiply(1 - interp_multipliers, vAB[i, None])
+        )
+    return np.concatenate(out)
