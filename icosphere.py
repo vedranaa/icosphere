@@ -59,8 +59,8 @@ def icosphere(nu=1, nr_verts=None):
     # If nr_verts given, computing appropriate subdivision frequency nu.
     # We know nr_verts = 12 + 10 * (nu + 1) * (nu - 1)
     if nr_verts is not None:
-        nu_min = np.ceil(np.sqrt(max(1 + (nr_verts - 12) / 10, 1)))
-        nu = max(nu, nu_min)
+        nu_min = int(np.ceil(np.sqrt(max(1 + (nr_verts - 12) / 10, 1))))
+        nu = int(max(nu, nu_min))
 
     # Subdividing
     if nu > 1:
