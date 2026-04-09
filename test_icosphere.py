@@ -1,11 +1,16 @@
-import pytest
-
 import icosphere
+import unittest
 
 
-@pytest.mark.parametrize("nu", [1, 2, 3, 5, 10])
-def test_icosphere(nu):
-    vertices, faces = icosphere.icosphere(nu)
-    # Smoke test: ensure outputs are not empty.
-    assert vertices.shape
-    assert faces.shape
+class TestIcosphere(unittest.TestCase):
+
+    def test_smoke(self):
+        for nu in [1, 2, 3, 5, 10]:
+            vertices, faces = icosphere.icosphere(nu)
+            # Smoke test: ensure outputs are not empty.
+            self.assertTrue(vertices.shape)
+            self.assertTrue(faces.shape)
+
+
+if __name__ == "__main__":
+    unittest.main()
