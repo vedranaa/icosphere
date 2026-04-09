@@ -246,10 +246,15 @@ def inside_points(vAB, vAC):
                                               .---.---.---.---.
     '''
 
-    v = []
-    for i in range(1, vAB.shape[0]):
-        w = np.arange(1, i + 1) / (i + 1)
-        for k in range(i):
-            v.append(w[-1 - k] * vAB[i, :] + w[k] * vAC[i, :])
+    out = []
+    u = vAB.shape[0]
+    for i in range(0 if u == 1 else 1, u):
+        # Interpolate points on the segment between vAB[i] and vAC[i], excluding endpoints.
+        j = i + 1
+        interp = (np.arange(1, j) / j)[:, None]
+        out.append(
+            np.multiply(interp, vAC[i, None])
+            + np.multiply(1 - interp, vAB[i, None])
+        )
 
-    return np.array(v).reshape(-1, 3)  # reshape needed for empty return
+    return np.concatenate(out)
