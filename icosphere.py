@@ -48,8 +48,8 @@ def icosphere(nu=1, nr_verts=None):
 
     Returns
     -------
-    vertices : vertex list, numpy array of shape (12 + 10*(nu+1)*(nu-1), 3)
-    faces : face list, numpy array of shape (20*nu**2, 3)
+    vertices : vertex list, numpy array of shape (12 + 10 * (nu+1) * (nu-1), 3)
+    faces : face list, numpy array of shape (20 * nu**2, 3)
 
     '''
 
