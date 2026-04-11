@@ -1,6 +1,8 @@
 # Geodesic Icosahedron
 Creates a geodesic icosahedron given a subdivision frequency.
 
+![](https://github.com/vedranaa/icosphere/raw/main/Figure.png)
+
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/icosphere?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/icosphere)
 
 ## Installation
@@ -24,7 +26,6 @@ You can also open the notebooks in Colab:
 
 ## Why use subdivision frequency?
 For a certain subdivision frequency `nu`, each edge of the icosahedron will be split into `nu` segments, and each face will be split into `nu**2` faces.
-![](https://github.com/vedranaa/icosphere/raw/main/Figure.png)
 This is different from a more common approach that recursively applies subdivision with `nu = 2`, as used in pytorch3d [ico_sphere](https://github.com/facebookresearch/pytorch3d/blob/master/pytorch3d/utils/ico_sphere.py), pymeshlab [sphere](https://pymeshlab.readthedocs.io/en/latest/filter_list.html#sphere), trimesh [icosphere](https://trimsh.org/trimesh.creation.html?highlight=icosahedron#trimesh.creation.icosphere), and PyMesh [generate_icosphere](https://github.com/PyMesh/PyMesh/blob/384ba882b7558ba6e8653ed263c419226c22bddf/python/pymesh/meshutils/generate_icosphere.py).
 
 The subdivision-frequency approach gives better control of mesh resolution than recursive subdivision. In this approach, mesh resolution grows quadratically with `nu`, while in recursive subdivision it grows exponentially with the number of iterations. More precisely, under recursive subdivision, the number of vertices and faces in the resulting icosphere grows with iterations `iter` as `nr_vertex = 12 + 10 * (4**iter - 1)` and `nr_face = 10 * 4**iter`, which gives the sequence of vertex counts
