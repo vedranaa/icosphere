@@ -1,59 +1,58 @@
 '''
-An example of using icosphere module. Plots the icosphere in matplotlib,
-as good as matplotlib can -- very slowly and not so very nice.
+An example of using icosphere module. Plots the icosphere in matplotlib showing
+with color the original icosahedron faces.
 
 '''
 from icosphere import icosphere
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors
-import mpl_toolkits.mplot3d
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 fig = plt.figure()
+light_source = matplotlib.colors.LightSource(azdeg=60, altdeg=30)
+
 for nu in range(1, 7):
 
     vertices, faces = icosphere(nu=nu)
-    
-    # basic mesh color, divided in 20 groups (one for each original face)
-    jet = matplotlib.cm.tab20(np.linspace(0, 1, 20))
-    jet = np.tile(jet[:, :3], (1, faces.shape[0] // 20))
-    jet = jet.reshape(faces.shape[0], 1, 3)
 
-    # computing face shading intensity based on face normals
-    face_normals = np.cross(vertices[faces[:, 1]] - vertices[faces[:, 0]],
-                            vertices[faces[:, 2]] - vertices[faces[:, 0]])
-    face_normals /= np.sqrt(np.sum(face_normals ** 2, axis=1, keepdims=True))
-    light_source = matplotlib.colors.LightSource(azdeg=60, altdeg=30)
+    # Basic mesh colors divided in 20 groups (one for each original face).
+    colors = matplotlib.cm.tab20(np.linspace(0, 1, 20))[:, :3]
+    colors = np.tile(colors, (1, faces.shape[0] // 20)).reshape(faces.shape[0], 1, 3)
+
+    # Compute face shading intensity from normalized face normals.
+    face_normals = np.cross(
+        vertices[faces[:, 1]] - vertices[faces[:, 0]],
+        vertices[faces[:, 2]] - vertices[faces[:, 0]],
+    )
+    face_normals /= np.linalg.norm(face_normals, axis=1, keepdims=True)
     intensity = light_source.shade_normals(face_normals)
 
-    # blending face colors and face shading intensity
-    rgb = light_source.blend_hsv(rgb=jet, intensity=intensity.reshape(-1, 1, 1))
+    # Blend base colors with shading and add alpha channel.
+    rgb = light_source.blend_hsv(rgb=colors, intensity=intensity.reshape(-1, 1, 1))
+    alpha = np.full((rgb.shape[0], 1, 1), 0.9)
+    rgba = np.concatenate((rgb, alpha), axis=2)
 
-    # adding alpha value, may be left out
-    rgba = np.concatenate((rgb, 0.9 * np.ones(shape=(rgb.shape[0], 1, 1))), axis=2)
-
-    # creating mesh with given face colors
-    poly = mpl_toolkits.mplot3d.art3d.Poly3DCollection(vertices[faces])
+    poly = Poly3DCollection(vertices[faces])
     poly.set_facecolor(rgba.reshape(-1, 4))
     poly.set_edgecolor('black')
     poly.set_linewidth(0.25)
 
-    # and now -- visualization!
     ax = fig.add_subplot(2, 3, nu, projection='3d')
 
     ax.add_collection3d(poly)
 
-    ax.set_xlim(-1, 1)
-    ax.set_ylim(-1, 1)
-    ax.set_zlim(-1, 1)
+    ax.set(xlim=(-1, 1), ylim=(-1, 1), zlim=(-1, 1))
 
-    ax.set_xticks([-1, 0, 1])
-    ax.set_yticks([-1, 0, 1])
-    ax.set_zticks([-1, 0, 1])
+    ax.set(xticks=[-1, 0, 1], yticks=[-1, 0, 1], zticks=[-1, 0, 1])
+    ax.set_box_aspect((1, 1, 1))
 
     ax.set_title(f'nu={nu}')
 
 fig.suptitle('Icospheres with different subdivision frequency')
+plt.tight_layout()
+plt.subplots_adjust(hspace=0.4)
+# fig.savefig('Figure.png', dpi=150, bbox_inches='tight')  # TODO: remove
 plt.show()
 
 
