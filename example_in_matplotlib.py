@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib.colors
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
-fig = plt.figure()
+fig = plt.figure(figsize=(18, 4))
 light_source = matplotlib.colors.LightSource(azdeg=60, altdeg=30)
 
 for nu in range(1, 7):
@@ -38,7 +38,7 @@ for nu in range(1, 7):
     poly.set_edgecolor('black')
     poly.set_linewidth(0.25)
 
-    ax = fig.add_subplot(2, 3, nu, projection='3d')
+    ax = fig.add_subplot(1, 6, nu, projection='3d')
 
     ax.add_collection3d(poly)
 
@@ -51,8 +51,8 @@ for nu in range(1, 7):
 
 fig.suptitle('Icospheres with different subdivision frequency')
 plt.tight_layout()
-plt.subplots_adjust(hspace=0.4)
-# fig.savefig('Figure.png', dpi=150, bbox_inches='tight')  # TODO: remove
+plt.subplots_adjust(top=0.82, wspace=0.15)
+fig.savefig('Figure.png', dpi=150, bbox_inches='tight')  # TODO: remove
 plt.show()
 
 
