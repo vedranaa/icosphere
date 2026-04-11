@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(
     name = 'icosphere',
     version = '0.1.4',
-    description = 'Constructs geodesic icosahedron given subdivision frequency.',
+    description = 'Creates a geodesic icosahedron given a subdivision frequency.',
     long_description = long_description,
     long_description_content_type = "text/markdown",
     url = 'https://github.com/vedranaa/icosphere',

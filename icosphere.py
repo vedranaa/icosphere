@@ -1,6 +1,6 @@
 '''
-Creating geodesic icosahedron with given (integer) subdivision frequency (and
-not by recursively applying Loop-like subdivision).
+Creates a geodesic icosahedron for a given (integer) subdivision frequency,
+rather than by recursively applying Loop-like subdivision.
 
 The main advantage of subdivision frequency over recursive subdivision is
 better control of mesh resolution. With subdivision frequency, mesh resolution
@@ -36,15 +36,17 @@ import numpy as np
 
 def icosphere(nu=1, nr_verts=None):
     '''
-    Returns a geodesic icosahedron with subdivision frequency nu. Frequency
-    nu = 1 returns regular unit icosahedron, and nu > 1 performs subdivision.
-    If nr_verts is given, nu will be adjusted such that icosphere contains
-    at least nr_verts vertices. Returned faces are zero-indexed.
+    Return a geodesic icosahedron for subdivision frequency `nu`.
+
+    Frequency `nu = 1` returns a regular unit icosahedron, and `nu > 1`
+    performs subdivision. If `nr_verts` is given, `nu` is adjusted so the
+    generated icosphere contains at least `nr_verts` vertices. Returned faces
+    are zero-indexed.
 
     Parameters
     ----------
-    nu : subdivision frequency, integer (larger than 1 to make a change).
-    nr_verts : desired number of mesh vertices, if given, nu may be increased.
+    nu : subdivision frequency, integer (larger than 1 to subdivide).
+    nr_verts : desired number of mesh vertices; if given, `nu` may be increased.
 
     Returns
     -------
