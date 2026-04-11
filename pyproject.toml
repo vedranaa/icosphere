@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "icosphere"
-version = "0.1.4"
+version = "0.2.0"
 description = "Creates a geodesic icosahedron given a subdivision frequency."
 readme = "README.md"
 license = "lgpl-2.1"
