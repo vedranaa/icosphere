@@ -1,7 +1,7 @@
 # Geodesic Icosahedron
 Creates a geodesic icosahedron given a subdivision frequency.
 
-![](https://github.com/vedranaa/icosphere/raw/main/Figure.png)
+![](https://raw.githubusercontent.com/vedranaa/icosphere/main/Figure.png)
 
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/icosphere?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/icosphere)
 
